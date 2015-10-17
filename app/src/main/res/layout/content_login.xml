@@ -82,11 +82,12 @@
     <Button
         android:layout_width="250px"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup1"
-        android:layout_marginTop="20dp"
+        android:background="@drawable/button_theme_green"
         android:layout_marginLeft="40dp"
+        android:textColor="#FFFFFF"
         android:id="@+id/login"
-        android:text="Done"/>
+        android:text="Done"
+        android:layout_below="@+id/invalid" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

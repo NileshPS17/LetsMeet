@@ -12,10 +12,10 @@ import android.widget.ListView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ThreeFragment extends Fragment {
+public class LeaderboardFragment extends Fragment {
 
      String[] leaderboard={"Hemand","Nilesh","Arun"};
-    public ThreeFragment() {
+    public LeaderboardFragment() {
         // Required empty public constructor
     }
     public  void onCreate(Bundle savedInstanceState){
@@ -28,7 +28,7 @@ public class ThreeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_three, container, false);
+        View view=inflater.inflate(R.layout.fragment_leaderboard, container, false);
         return view;
     }
 

@@ -1,6 +1,7 @@
 package com.rippleworks.letsmeet;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -44,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private  void setupViewPager(ViewPager viewPager){
         ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragment(new OneFragment(), "Home");
-        viewPagerAdapter.addFragment(new TwoFragment(), "Profile");
-        viewPagerAdapter.addFragment(new ThreeFragment(), "Leaderboard");
+        viewPagerAdapter.addFragment(new HomeFragment(), "Home");
+        viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
+        viewPagerAdapter.addFragment(new LeaderboardFragment(), "Leaderboard");
         viewPager.setAdapter(viewPagerAdapter);
 
     }
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
 

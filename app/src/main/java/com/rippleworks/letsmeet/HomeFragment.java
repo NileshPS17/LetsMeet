@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
-public class OneFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
 Button b1;
-    public OneFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
     public void onCreate(Bundle savedInstanceState){
@@ -25,7 +25,7 @@ Button b1;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_one, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
 
     }
 

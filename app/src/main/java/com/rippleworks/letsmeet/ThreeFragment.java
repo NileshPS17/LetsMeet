@@ -29,14 +29,14 @@ public class ThreeFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_three, container, false);
-               return view;
+        return view;
     }
 
 @Override
 public void onActivityCreated(Bundle savedInstanceState){
     super.onActivityCreated(savedInstanceState);
     ListView listView=(ListView)getActivity().findViewById(R.id.listview);
-    ArrayAdapter adapter=new ArrayAdapter(getActivity().getApplicationContext(),android.R.layout.simple_list_item_1,leaderboard);
+    ArrayAdapter adapter=new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1,leaderboard);
     listView.setAdapter(adapter);
 
 }

@@ -7,14 +7,14 @@
         <EditTextPreference
             android:title="Status"
             android:summary="Share your thoughts"
-            android:key="globalPref_status"
+            android:key="Pref_Status"
             android:maxLines="3"
             android:maxLength="100"
             android:icon="@mipmap/ic_think" />
 
         <ListPreference
-            android:title="Hobbies"
-            android:key="prefGlobal_hobbies"
+            android:title="Hobby"
+            android:key="Pref_Hobby"
             android:summary="Find friends with similar interests"
             android:entries="@array/hobby_entries"
             android:entryValues="@array/hobby_entries"
@@ -24,7 +24,7 @@
 
         <CheckBoxPreference
             android:defaultValue="false"
-            android:key="globalPref_profileView"
+            android:key="Pref_Profile"
             android:title="Show your profile"
             android:icon="@mipmap/ic_profile"
             android:summaryOn="Anyone"
@@ -37,7 +37,7 @@
 
         <EditTextPreference
             android:defaultValue="username@example.com"
-            android:key="globalPref_email"
+            android:key="Pref_Email"
             android:title="Email"
             android:icon="@mipmap/ic_action_email"
             android:summary="@string/change_email" />
@@ -49,14 +49,14 @@
             android:summary="Change whatsapp contact"
             android:title="Whatsapp"
             android:icon="@mipmap/ic_whatsapp"
-            android:key="globalPref_whatsapp" />
+            android:key="Pref_Whatsapp" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:title="Facebook"
             android:summaryOff="Link with facebook"
             android:summaryOn="Connected to facebook"
-            android:key="globalPref_facebook"
+            android:key="Pref_Facebook"
             android:icon="@mipmap/ic_facebook" />
 
     </PreferenceCategory>

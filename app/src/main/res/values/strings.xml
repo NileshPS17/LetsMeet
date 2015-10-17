@@ -20,4 +20,15 @@
         <item>Programming</item>
         <item>Movies</item>
     </string-array>
+
+    <!-- Preference KEys .. Do Not Modify -->
+    <string name="Pref_Email">Pref_Email</string>
+    <string name="Pref_Status">Pref_Status</string>
+    <string name="Pref_Profile">Pref_Profile</string>
+    <string name="Pref_Whatsapp">Pref_Whatsapp</string>
+    <string name="Pref_Facebook">Pref_Facebook</string>
+    <string name="Pref_Hobby">Pref_Hobby</string>
+
+
+
 </resources>

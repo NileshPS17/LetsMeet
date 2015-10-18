@@ -1,11 +1,13 @@
 package com.rippleworks.letsmeet;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 
-public class SettingsActivity extends AppCompatPreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener
+public class SettingsActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener
 {
 
     @Override
@@ -26,6 +28,10 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Sha
         {
             // If turned on , then Sync with facebook and verify E-MAil
             //If Turned off, then leave it as it is.
+            if(sharedPreferences.getBoolean("Pref_Facebook", false))
+            {
+                startActivity(new Intent(this , FacebookLoginActivity.class));
+            }
         }
         else if(key.equals(R.string.Pref_Email))
         {

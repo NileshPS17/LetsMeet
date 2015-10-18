@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private int TabIcons[] = { R.mipmap.ic_home, R.mipmap.ic_profile, R.mipmap.ic_leaderboard};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout=(TabLayout)findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        for(int i=0; i<tabLayout.getTabCount(); ++i)
+        {
+            tabLayout.getTabAt(i).setIcon(TabIcons[i]);
+        }
 
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -97,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
+        }
+        else if(id == R.id.action_facebook)
+        {
+            startActivity(new Intent(this, FacebookLoginActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

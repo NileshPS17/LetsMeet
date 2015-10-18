@@ -26,7 +26,7 @@
             android:defaultValue="false"
             android:key="Pref_Profile"
             android:title="Show your profile"
-            android:icon="@mipmap/ic_profile"
+            android:icon="@mipmap/ic_profile_setting"
             android:summaryOn="Anyone"
             android:summaryOff="Friends only" />
 

@@ -39,7 +39,7 @@
             android:defaultValue="username@example.com"
             android:key="Pref_Email"
             android:title="Email"
-            android:icon="@mipmap/ic_action_email"
+
             android:summary="@string/change_email" />
 
 

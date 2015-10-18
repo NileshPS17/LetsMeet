@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
     public  int selected;
     RadioButton radioButton;
     boolean correct_name;
-    String name,login;
+    String name,login,branch;
     final Boolean isLoggedIn=false;
     TextView textView;
     EditText e1;
@@ -29,7 +29,7 @@ public class Login extends AppCompatActivity {
     private Pattern pattern;
 
     private static final String USERNAME_PATTERN = "^[a-zA-Z ]{4,}$";
-
+    public static final String USER_NAME="name";
     RadioGroup radioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +43,9 @@ public class Login extends AppCompatActivity {
         radioGroup=(RadioGroup)findViewById(R.id.radioGroup1);
         selected=radioGroup.getCheckedRadioButtonId();
         radioButton=(RadioButton)findViewById(selected);
+       // branch=radioButton.getText().toString();
         name=e1.getText().toString();
-        final SharedPreferences preferences=getSharedPreferences("my_prefs",0);
+        final SharedPreferences preferences=getSharedPreferences("my_prefs2",0);
         final SharedPreferences.Editor editor=preferences.edit();
         //LetsMeetClient client;
 
@@ -64,6 +65,8 @@ public class Login extends AppCompatActivity {
                     editor.putBoolean("loggedin",true);
                     editor.commit();
                     Intent intent=new Intent(Login.this,MainActivity.class);
+                    intent.putExtra(USER_NAME,name);
+                   // intent.putExtra("branch",branch);
                     Login.this.startActivity(intent);
                     Login.this.finish();
                 }

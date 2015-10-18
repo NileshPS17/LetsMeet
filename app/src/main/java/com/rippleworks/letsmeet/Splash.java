@@ -15,7 +15,7 @@ import android.widget.Button;
 
 public class Splash extends AppCompatActivity {
     int SPLASH_TIMER = 4000;
-    Boolean isFirstTime;
+    Boolean isNotFirstTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +24,15 @@ public class Splash extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        SharedPreferences preferences = getSharedPreferences("my_prefs", 0);
-        isFirstTime = preferences.getBoolean("loggedin", false);
+        SharedPreferences preferences = getSharedPreferences("my_prefs2", 0);
+        isNotFirstTime = preferences.getBoolean("loggedin", false);
 
 
         setSupportActionBar(toolbar);
         getSupportActionBar().hide();
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                if (isFirstTime) {
+                if (isNotFirstTime) {
                     Intent intent = new Intent(Splash.this, MainActivity.class);
                     Splash.this.startActivity(intent);
                     Splash.this.finish();

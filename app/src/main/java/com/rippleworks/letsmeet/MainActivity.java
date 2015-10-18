@@ -17,7 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    String name,branch;
+    public static final String USER_NAME="name";
+    public static final String USER_BRANCH="branch";
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int TabIcons[] = { R.mipmap.ic_home, R.mipmap.ic_profile, R.mipmap.ic_leaderboard};
@@ -29,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         viewPager=(ViewPager)findViewById(R.id.viewpager);
         setupViewPager(viewPager);
+        Intent intent=this.getIntent();
+        if(intent!=null)
+        name=intent.getStringExtra("name");
+        //branch=intent.getStringExtra("branch");
+        Bundle bundle=new Bundle();
+        bundle.putString(USER_NAME,name);
+        HomeFragment fragment=new HomeFragment();
+                fragment.setArguments(bundle);
 
         tabLayout=(TabLayout)findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);

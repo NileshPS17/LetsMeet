@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity {
                     editor.putBoolean("loggedin",true);
                     editor.commit();
                     Intent intent=new Intent(Login.this,MainActivity.class);
-                    intent.putExtra(USER_NAME,name);
+                    intent.putExtra(USER_NAME,e1.getText().toString());
                    // intent.putExtra("branch",branch);
                     Login.this.startActivity(intent);
                     Login.this.finish();

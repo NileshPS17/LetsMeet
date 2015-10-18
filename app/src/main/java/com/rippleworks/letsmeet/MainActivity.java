@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String USER_BRANCH="branch";
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private HomeFragment homefragment;
     private int TabIcons[] = { R.mipmap.ic_home, R.mipmap.ic_profile, R.mipmap.ic_leaderboard};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,23 +31,25 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         viewPager=(ViewPager)findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
+
         Intent intent=this.getIntent();
         if(intent!=null)
         name=intent.getStringExtra("name");
         //branch=intent.getStringExtra("branch");
+
         Bundle bundle=new Bundle();
         bundle.putString(USER_NAME,name);
-        HomeFragment fragment=new HomeFragment();
-                fragment.setArguments(bundle);
+        homefragment=new HomeFragment();
+        homefragment.setArguments(bundle);
 
         tabLayout=(TabLayout)findViewById(R.id.tabs);
+
+        setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
         for(int i=0; i<tabLayout.getTabCount(); ++i)
         {
             tabLayout.getTabAt(i).setIcon(TabIcons[i]);
         }
-
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private  void setupViewPager(ViewPager viewPager){
         ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragment(new HomeFragment(), "Home");
+        viewPagerAdapter.addFragment(homefragment, "Home");
         viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
         viewPagerAdapter.addFragment(new LeaderboardFragment(), "Leaderboard");
         viewPager.setAdapter(viewPagerAdapter);

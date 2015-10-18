@@ -9,12 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 
 public class HomeFragment extends Fragment {
 
-Button b1;
+    Button b1;
     String name;
     public HomeFragment() {
         // Required empty public constructor
@@ -29,8 +27,8 @@ Button b1;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-       // Bundle bundle=this.getArguments();
-        //name=bundle.getString("name");
+        Bundle bundle=this.getArguments();
+        name=bundle.getString("name");
         return inflater.inflate(R.layout.fragment_home, container, false);
 
     }
